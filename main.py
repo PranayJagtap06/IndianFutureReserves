@@ -6,9 +6,9 @@ import joblib
 import pickle
 
 
-# model = joblib.load('foreign_reserves_prophet.joblib')
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+model = joblib.load('foreign_reserves_prophet.joblib')
+# with open('model.pkl', 'rb') as f:
+#     model = pickle.load(f)
 
 # Setting up Streamlit app page
 about = "Welcome to our Streamlit IndianFutureReserves application! This application is powered by a sophisticated machine learning model that predicts the future foreign exchange reserves of India in US $ million."\
