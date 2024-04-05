@@ -16,7 +16,7 @@ about = "Welcome to our Streamlit IndianFutureReserves application! This applica
     "The goal of this application is to provide users with an intuitive and interactive platform to explore and understand the dynamics of India's foreign exchange reserves. Whether you're an economist, a policy maker, a student, or just someone interested in the Indian economy, we believe this application will be a valuable tool for you."\
     "We're committed to making complex economic forecasting accessible and understandable. We hope you find this application insightful and useful in your endeavors. Enjoy exploring!"
 
-st.set_page_config(page_title='IndianFutureReserves', page_icon='🤖', menu_items={'Get Help': 'https://github.com/PranayJagtap06/ML_Projects/tree/main/Indian Economy-Foreign Exchange Reserves Prediction', 'About': f"{about}"})
+st.set_page_config(page_title='IndianFutureReserves', page_icon='🤖', menu_items={'About': f"{about}"})
 st.title(body="IndianFutureReserves: Predicting India's Financial Fortunes 🔮💰")
 st.markdown("*Leverage the power of machine learning to unveil future trends in India's foreign exchange reserves with pinpoint precision, fueled by authoritative RBI data.*")
 
