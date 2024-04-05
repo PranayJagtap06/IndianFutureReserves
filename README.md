@@ -1,6 +1,12 @@
 # IndianFutureReserves: Predicting India's Financial Fortunes 🤖💰
 
 <p align="center">
+  <i>
+    Leverage the power of machine learning to unveil future trends in India's foreign exchange reserves with pinpoint precision, fueled by authoritative RBI data.
+  </i>
+</p>
+
+<p align="center">
   <img src="https://github.com/PranayJagtap06/IndianFutureReserves/blob/main/assets/Designer.png" width="400" alt="IndianFutureReserves">
 </p>
 
