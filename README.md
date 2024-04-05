@@ -15,7 +15,6 @@ If you are interested in training you own model then visit my [ML_Projects](http
 - **Intuitive User Interface**: The Streamlit-based application offers a user-friendly interface, making it accessible to economists, policymakers, students, and anyone interested in the Indian economy.
 - **Accurate Predictions**: The application's machine learning model, trained on a comprehensive dataset from the RBI, ensures reliable and accurate forecasts of India's foreign exchange reserves.
 - **Interactive Exploration**: Users can explore the predicted future trends by adjusting various economic indicators, such as forward premia, interest rates, and yield curves.
-- **Comprehensive Insights**: The application provides detailed information and context around the forecasts, empowering users to make informed decisions.
 - **Session History**: Users can view the history of their previous predictions and interactions with the application, allowing them to track their explorations.
 
 ## Getting Started 🏃
