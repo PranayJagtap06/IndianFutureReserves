@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 import joblib
 import pickle
+import io
+import csv
 
 
 model = joblib.load('foreign_reserves_prophet.joblib')
@@ -41,6 +43,7 @@ sdf = st.slider("Standing Deposit Facility (SDF) Rate (%)", min_value=1.00, max_
 predict = st.button('Predict')
 history = st.button('History')
 delete_history = st.button('Delete History')
+download_history = st.button("Download History")
 
 # Initialize session state for session history
 if "session_history" not in st.session_state:
@@ -99,3 +102,23 @@ if history:
 if delete_history:
     st.session_state.session_history.clear()
     display_history()
+
+if download_history:
+    # Create a CSV file from the session history
+    csv_buffer = io.StringIO()
+    writer = csv.writer(csv_buffer)
+    writer.writerow(["Period", "Forward Premia of US$ 1-month (%)", "Forward Premia of US$ 3-month (%)", "Forward Premia of US$ 6-month (%)",
+                    "Reverse Repo Rate (%)", "Marginal Standing Facility (MSF) Rate (%)", "Bank Rate (%)", "Base Rate (%)",
+                    "91-Day Treasury Bill (Primary) Yield (%)", "182-Day Treasury Bill (Primary) Yield (%)", "364-Day Treasury Bill (Primary) Yield (%)",
+                    "10-Year G-Sec Yield (FBIL) (%)", "Cash Reserve Ratio (%)", "Statutory Liquidity Ratio (%)",
+                    "Policy Repo Rate (%)", "Standing Deposit Facility (SDF) Rate (%)", "Prediction"])
+    for item in st.session_state.session_history:
+        writer.writerow([item["dataframe"]["Period"][0]] + list(item["dataframe"].iloc[0, 1:]) + [item["prediction"]])
+
+    # Download the CSV file
+    st.download_button(
+        label="click to download",
+        data=csv_buffer.getvalue(),
+        file_name="session_history.csv",
+        mime="text/csv",
+    )
