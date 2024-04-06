@@ -16,6 +16,8 @@ The **IndianFutureReserves** is a Streamlit-powered application that leverages t
 
 If you are interested in training you own model then visit my [ML_Projects](https://github.com/PranayJagtap06/ML_Projects/) github repo and go to `Indian Economy-Foreign Exchange Reserves Prediction` folder to access the Jupyter Notebook.
 
+[*Visit Streamlit App*](https://indianfuturereserves-05-04-2024.streamlit.app/)
+
 ## Key Features 🔑
 
 - **Intuitive User Interface**: The Streamlit-based application offers a user-friendly interface, making it accessible to economists, policymakers, students, and anyone interested in the Indian economy.
