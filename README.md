@@ -22,6 +22,7 @@ If you are interested in training you own model then visit my [ML_Projects](http
 - **Accurate Predictions**: The application's machine learning model, trained on a comprehensive dataset from the RBI, ensures reliable and accurate forecasts of India's foreign exchange reserves.
 - **Interactive Exploration**: Users can explore the predicted future trends by adjusting various economic indicators, such as forward premia, interest rates, and yield curves.
 - **Session History**: Users can view the history of their previous predictions and interactions with the application, allowing them to track their explorations.
+- **Download Session History**: Users can download the session history as csv file.
 
 ## Getting Started 🏃
 
