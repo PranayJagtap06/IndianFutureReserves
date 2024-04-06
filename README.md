@@ -56,4 +56,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or feedback, please feel free to reach out to the project maintainer at [pranaydgo06@duck.com].
+For any inquiries or feedback, please feel free to reach out to the project maintainer at [pranaydgo06@duck.com](pranaydgo06@duck.com).
