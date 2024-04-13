@@ -116,10 +116,11 @@ if download_history:
         writer.writerow([item["dataframe"]["Period"][0]] + list(item["dataframe"].iloc[0, 1:]) + [item["prediction"]])
 
     # Download the CSV file
-    if st.download_button(
+    st.download_button(
         label="click to download",
         data=csv_buffer.getvalue(),
         file_name="session_history.csv",
         mime="text/csv",
-    ):
-        st.success('File downloaded successfully!')
+        on_click=st.success('File downloaded successfully!')
+    )
+        
