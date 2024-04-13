@@ -103,6 +103,9 @@ if delete_history:
     st.session_state.session_history.clear()
     display_history()
 
+def success_msg():
+    st.success('File downloaded successfully!')
+
 if download_history:
     # Create a CSV file from the session history
     csv_buffer = io.StringIO()
@@ -121,6 +124,6 @@ if download_history:
         data=csv_buffer.getvalue(),
         file_name="session_history.csv",
         mime="text/csv",
-        on_click=st.success('File downloaded successfully!')
+        on_click=success_msg()
     )
         
