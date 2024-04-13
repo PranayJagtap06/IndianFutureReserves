@@ -122,3 +122,5 @@ if download_history:
         file_name="session_history.csv",
         mime="text/csv",
     )
+
+    st.success('File downloaded successfully!')
