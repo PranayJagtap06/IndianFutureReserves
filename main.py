@@ -1,6 +1,7 @@
 import datetime
 import joblib
 import pickle
+import base64
 import io
 import csv
 import numpy as np
@@ -18,6 +19,10 @@ about = "Welcome to our Streamlit IndianFutureReserves application! This applica
     "Our model is trained on a comprehensive dataset sourced directly from the Reserve Bank of India, ensuring the accuracy and reliability of our predictions. The dataset includes a wide range of economic indicators, providing our model with a robust foundation for forecasting."\
     "The goal of this application is to provide users with an intuitive and interactive platform to explore and understand the dynamics of India's foreign exchange reserves. Whether you're an economist, a policy maker, a student, or just someone interested in the Indian economy, we believe this application will be a valuable tool for you."\
     "We're committed to making complex economic forecasting accessible and understandable. We hope you find this application insightful and useful in your endeavors. Enjoy exploring!"
+
+def get_image_base64(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode('utf-8')
 
 st.set_page_config(page_title='IndianFutureReserves', page_icon='🤖', menu_items={'About': f"{about}"})
 st.title(body="IndianFutureReserves: Predicting India's Financial Fortunes 🔮💰")
@@ -160,3 +165,4 @@ st.markdown(html_code, unsafe_allow_html=True)
 # st.image("assets/pranay_sq.jpg", width=125)
 st.markdown("Electrical Engineer ⚡ | Python enthusiast 🐍 | Machine learning explorer 🤖 "\
             "<br>📍 Nagpur, Maharashtra, India", unsafe_allow_html=True)
+
