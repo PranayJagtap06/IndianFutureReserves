@@ -1,11 +1,12 @@
 import datetime
-import numpy as np
-import pandas as pd
-import streamlit as st
 import joblib
 import pickle
 import io
 import csv
+import numpy as np
+import pandas as pd
+import streamlit as st
+
 
 
 model = joblib.load('foreign_reserves_prophet.joblib')
@@ -24,6 +25,8 @@ st.markdown("*Leverage the power of machine learning to unveil future trends in 
 
 # columns = ['Date', 'Forward Premia of US$ 1-month (%)', 'Forward Premia of US$ 3-month (%)', 'Forward Premia of US$ 6-month (%)', 'Reverse Repo Rate (%)', 'Marginal Standing Facility (MSF) Rate (%)', 'Bank Rate (%)', 'Base Rate (%)', '91-Day Treasury Bill (Primary) Yield (%)', '182-Day Treasury Bill (Primary) Yield (%)', '364-Day Treasury Bill (Primary) Yield (%)', '10-Year G-Sec Yield (FBIL) (%)', 'Cash Reserve Ratio (%)', 'Statutory Liquidity Ratio (%)', 'Policy Repo Rate (%)', 'Standing Deposit Facility (SDF) Rate (%)']
 
+st.markdown("""---""")
+st.header("Select Parameters")
 period = st.date_input('Date', min_value=datetime.date(2023, 11, 1), max_value=datetime.date(2074, 12, 31))
 fp_1month = st.slider("Forward Premia of US$ 1-month (%)", min_value=1.00, max_value=100.00, value=7.25)
 fp_3month = st.slider("Forward Premia of US$ 3-month (%)", min_value=1.00, max_value=100.00, value=4.15)
@@ -68,7 +71,8 @@ def predictreserves(dataframe: object, model_: object):
 
 # Writting History function
 def display_history():
-    st.markdown("# Session History")
+    st.markdown("""---""")
+    st.header("Session History")
     for i, item in enumerate(st.session_state.session_history[::-1]):
         df_ = item['dataframe']
         _pred = item['prediction']
@@ -86,9 +90,10 @@ if predict:
     result_, date_, df_ = predictreserves(dataframe=df, model_=model)
 
     # Write prediction in Streamlit
-    st.markdown("# Prediction")
+    st.markdown("""---""")
+    st.header("Prediction")
     txt = f"Foreign Reserves on {date_} will be ${np.round(result_[0], 2):,} Million."
-    st.write(txt)
+    st.subheader(txt)
 
     # Renaming 'ds' column in dataframe to 'Date'
     df_.rename(columns={'ds': 'Period'}, inplace=True)
