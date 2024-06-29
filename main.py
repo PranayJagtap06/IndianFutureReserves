@@ -127,3 +127,36 @@ if download_history:
         file_name="session_history.csv",
         mime="text/csv",
     )
+
+st.markdown("""---""")
+st.markdown("Created by [Pranay Jagtap](https://pranayjagtap06.github.io)")
+
+# Get the base64 string of the image
+img_base64 = get_image_base64("assets/pranay_sq.jpg")
+
+# Create the HTML for the circular image
+html_code = f"""
+<style>
+    .circular-image {{
+        width: 125px;
+        height: 125px;
+        border-radius: 55%;
+        overflow: hidden;
+        display: inline-block;
+    }}
+    .circular-image img {{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }}
+</style>
+<div class="circular-image">
+    <img src="data:image/jpeg;base64,{img_base64}" alt="Pranay Jagtap">
+</div>
+"""
+
+# Display the circular image
+st.markdown(html_code, unsafe_allow_html=True)
+# st.image("assets/pranay_sq.jpg", width=125)
+st.markdown("Electrical Engineer ⚡ | Python enthusiast 🐍 | Machine learning explorer 🤖 "\
+            "<br>📍 Nagpur, Maharashtra, India", unsafe_allow_html=True)
