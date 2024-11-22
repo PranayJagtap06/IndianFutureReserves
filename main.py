@@ -134,7 +134,7 @@ if download_history:
     )
 
 st.markdown("""---""")
-st.markdown("Created by [Pranay Jagtap](https://pranayjagtap06.github.io)")
+st.markdown("Created by [Pranay Jagtap](https://pranayjagtap.netlify.app)")
 
 # Get the base64 string of the image
 img_base64 = get_image_base64("assets/pranay_sq.jpg")
@@ -163,6 +163,6 @@ html_code = f"""
 # Display the circular image
 st.markdown(html_code, unsafe_allow_html=True)
 # st.image("assets/pranay_sq.jpg", width=125)
-st.markdown("Electrical Engineer ⚡ | Python enthusiast 🐍 | Machine learning explorer 🤖 "\
-            "<br>📍 Nagpur, Maharashtra, India", unsafe_allow_html=True)
+st.markdown("Electrical Engineer | Machine learning Enthusiast "\
+            "<br>Nagpur, Maharashtra, India", unsafe_allow_html=True)
 
