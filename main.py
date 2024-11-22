@@ -133,6 +133,7 @@ if download_history:
         mime="text/csv",
     )
 
+# Personal Website
 st.markdown("""---""")
 st.markdown("Created by [Pranay Jagtap](https://pranayjagtap.netlify.app)")
 
